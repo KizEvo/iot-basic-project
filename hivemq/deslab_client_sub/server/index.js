@@ -53,7 +53,7 @@ client.on('connect', () => {
 // Message: Event handlers, message received
 client.on('message', (topic, message) => {
   console.log(`Received message on topic ${topic}: ${message.toString()}`);
-	axios.post('http://${serverIp}/api/v1/${serverAccessToken}/telemetry', {temperature: message.toString()})
+	axios.post(`http://${serverIp}/api/v1/${serverAccessToken}/telemetry`, {temperature: message.toString()})
 	  .then(response => {})
 	  .catch(error => {
 	    console.error('Error:', error);
